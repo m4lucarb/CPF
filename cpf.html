@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de CPF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            width: 200px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Validador de CPF</h2>
+    <input type="text" id="cpf" placeholder="Digite o CPF">
+    <button onclick="validarCPF()">Validar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function validarCPF() {
+            let cpf = document.getElementById("cpf").value.replace(/\D/g, ""); // Remove tudo que não for número
+            let resultado = document.getElementById("resultado");
+
+            if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf
